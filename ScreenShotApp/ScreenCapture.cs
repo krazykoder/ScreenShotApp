@@ -10,8 +10,8 @@ namespace ScreenShotDemo
 {
 
     /*************************************************
-     
-     Screen capture class and functions 
+   
+     Screen capture class and functions : C++ , C# 
      
      *************************************************/
 
