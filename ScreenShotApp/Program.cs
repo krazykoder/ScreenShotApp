@@ -12,7 +12,6 @@ namespace ScreenShotDemo
     /// <summary>
     /// Provides functions to capture the entire screen, or a particular window, and save it to a file.
     /// </summary>
-    /// 
 
 
     // xml file configuration for 'config.xml'
@@ -235,8 +234,6 @@ namespace ScreenShotDemo
 
             return captureBitmap;
         }
-
-
 
         /*
          *  Main Caller functions  CaptureMyScreen() OR ScreenCapture.CaptureScreen() 
