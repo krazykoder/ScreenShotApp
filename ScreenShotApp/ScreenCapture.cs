@@ -12,6 +12,7 @@ namespace ScreenShotDemo
     /*************************************************
    
      Screen capture class and functions : C++ , C# 
+     @towshifali
      
      *************************************************/
 
