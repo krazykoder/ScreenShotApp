@@ -11,6 +11,7 @@ namespace ScreenShotDemo
 {
     /// <summary>
     /// Provides functions to capture the entire screen, or a particular window, and save it to a file.
+    /// Added SCREEN selection via config file
     /// </summary>
 
 
