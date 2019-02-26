@@ -166,9 +166,9 @@ namespace ScreenShotUtility
             
 
             // Greetings 
-            Console.WriteLine("!-----------------------------Hello World!-------------------------------------------!");
+            Console.WriteLine("!-----------------------------Hello World!---------------------------------------------!");
             Console.WriteLine("             This is Towshif's screen grabber utility based on T-R                      ");
-            Console.WriteLine("To generate config file, open cmd in the directory and run \n> ScreenShotApp.exe --config");
+            Console.WriteLine("To generate config file, open cmd in the directory, run \n> ScreenShotApp.exe --config");
             Console.WriteLine("!--------------------------------------------------------------------------------------!\n");
 
             // Start Runner 
