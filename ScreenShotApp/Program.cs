@@ -33,11 +33,11 @@ namespace ScreenShotDemo
         static bool init = true;
         static ScreenCapture sc;
 
-        public static string dir = "NA";
-        public static double threshold = 0.002; // 0.01 => 1% 
-        private static bool diff_flag = true ;
-        private static int interval = 500;
-        private static int screen = 0; // default screen = 0
+        public static string DIR = "NA";
+        public static double THRESHOLD = 0.002; // 0.01 => 1% 
+        private static bool DIFF_FLAG = true ;
+        private static int INTERVAL = 500;
+        private static int SCREEN = 0; // default screen = 0
 
         // read xml file 'config.xml'
         public static void readConfiguration()
@@ -53,11 +53,11 @@ namespace ScreenShotDemo
 
 
             // populate vars 
-            dir = Convert.ToString(conf.dir);
-            threshold = Convert.ToDouble(conf.threshold);
-            diff_flag = Convert.ToBoolean(conf.diff_flag);
-            interval = Convert.ToInt32(conf.interval);
-            screen = Convert.ToInt32(conf.screen);
+            DIR = Convert.ToString(conf.dir);
+            THRESHOLD = Convert.ToDouble(conf.threshold);
+            DIFF_FLAG = Convert.ToBoolean(conf.diff_flag);
+            INTERVAL = Convert.ToInt32(conf.interval);
+            SCREEN = Convert.ToInt32(conf.screen);
 
             /// test read 
             //Console.WriteLine(dir);
@@ -154,13 +154,13 @@ namespace ScreenShotDemo
 
             // CREATE DIR AND PATH 
 
-            if (dir == "NA") dir = path + @"\\img\\saved_" + date.ToString(); // save in the bin directory 
-            else dir = dir + @"\\saved_" + date.ToString();
+            if (DIR == "NA") DIR = path + @"\\img\\saved_" + date.ToString(); // save in the bin directory 
+            else DIR = DIR + @"\\saved_" + date.ToString();
 
-            System.IO.Directory.CreateDirectory(dir);
+            System.IO.Directory.CreateDirectory(DIR);
 
-            Console.WriteLine("Image Save Path = " + dir);
-            Console.WriteLine("Threshold=" + threshold);
+            Console.WriteLine("Image Save Path = " + DIR);
+            Console.WriteLine("Threshold=" + THRESHOLD);
 
             
 
@@ -174,7 +174,7 @@ namespace ScreenShotDemo
             sc = new ScreenCapture();
             System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = interval;
+            aTimer.Interval = INTERVAL;
             aTimer.Enabled = true;
 
             Console.WriteLine("Press \'q\' to quit the sample.");
@@ -246,7 +246,7 @@ namespace ScreenShotDemo
             //using (var c = sc.CaptureScreen())
 
             // Method II: Windows forms Screen function for capture 
-            using (var c = CaptureMyScreen(screen))
+            using (var c = CaptureMyScreen(SCREEN))
             {
 
                 // capture entire screen, and save it to a file
@@ -275,7 +275,7 @@ namespace ScreenShotDemo
                 //if (isPixelDiff(new Bitmap (imgR), new Bitmap (imgT)))
                 {
                     //imgT.Save(dir + "\\" + (fileCount++) + ".gif", ImageFormat.Gif);
-                    imgT.Save(dir + "\\" + (fileCount++) + ".png", ImageFormat.Png); // use PNG for High Res Images 
+                    imgT.Save(DIR + "\\" + (fileCount++) + ".png", ImageFormat.Png); // use PNG for High Res Images 
                     //imgD.Save(dir + "\\" + temp_diff" + (fileCount) + ".png", ImageFormat.png);
                 }
 
@@ -392,7 +392,7 @@ namespace ScreenShotDemo
 
 
             // save diff image 
-            if ( diff_flag ) diffImage.Save(dir + "\\" + "diff" + (fileCount) + ".png", ImageFormat.Png);
+            if ( DIFF_FLAG ) diffImage.Save(DIR + "\\" + "diff" + (fileCount) + ".png", ImageFormat.Png);
 
             // dispose and release memory 
             image1.Dispose();
@@ -403,7 +403,7 @@ namespace ScreenShotDemo
             Console.Write("[" + height + "X" + width + "] ");
             Console.Write(fileCount + "> count = " + count + " of " + (height * width) + "=%" + (100 * (double)count / (double)(height * width)));
             //Console.WriteLine();
-            if (count > threshold * (height * width)) { return true; }
+            if (count > THRESHOLD * (height * width)) { return true; }
             else return false;
 
             //return diffImage;
