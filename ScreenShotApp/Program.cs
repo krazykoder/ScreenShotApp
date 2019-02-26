@@ -7,7 +7,7 @@ using System.Timers;
 using System.Reflection;
 using System.IO; 
 
-namespace ScreenShotDemo
+namespace ScreenShotUtility
 {
     /// <summary>
     /// Provides functions to capture the entire screen, or a particular window, and save it to a file.

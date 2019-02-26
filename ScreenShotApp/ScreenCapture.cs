@@ -6,7 +6,7 @@ using System.Drawing.Imaging;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace ScreenShotDemo
+namespace ScreenShotUtility
 {
 
     /*************************************************
